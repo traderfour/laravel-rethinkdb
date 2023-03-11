@@ -43,10 +43,11 @@ class Connection extends \Illuminate\Database\Connection
      * Begin a fluent query against a database table.
      *
      * @param string $table
-     *
+     * @param null|string $as
+     * 
      * @return QueryBuilder
      */
-    public function table($table)
+    public function table($table, $as = null)
     {
         $query = new QueryBuilder($this);
 
