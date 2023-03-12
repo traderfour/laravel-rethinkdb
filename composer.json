@@ -7,6 +7,12 @@
         }
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/traderfour/php-rql.git"
+        }
+    ],
     "autoload": {
         "psr-4": { "duxet\\Rethinkdb\\": "src/" }
     },
@@ -16,7 +22,7 @@
         "illuminate/contracts": ">=5.0.0",
         "illuminate/database": ">=5.0.0",
         "illuminate/support": ">=5.0.0",
-        "danielmewes/php-rql": "~2.3.0"
+        "danielmewes/php-rql": "@dev"
     },
     "require-dev": {
         "psr/log": "1.0.0",
