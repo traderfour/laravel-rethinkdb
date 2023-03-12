@@ -55,17 +55,18 @@ class Builder extends QueryBuilder
      * Set the collection which the query is targeting.
      *
      * @param string $table
+     * @param null|string $as
      *
      * @return Builder
      */
-    public function from($table)
+    public function from($table, $as = null)
     {
         if ($table) {
             $this->table = r\table($table);
             $this->query->table($table);
         }
 
-        return parent::from($table);
+        return parent::from($table, $as);
     }
 
     /**
@@ -472,13 +473,13 @@ class Builder extends QueryBuilder
      * Add a where between statement to the query.
      *
      * @param string $column
-     * @param array  $values
+     * @param iterable  $values
      * @param string $boolean
      * @param bool   $not
      *
      * @return Builder
      */
-    public function whereBetween($column, array $values, $boolean = 'and', $not = false)
+    public function whereBetween($column, iterable $values, $boolean = 'and', $not = false)
     {
         $type = 'between';
         $this->wheres[] = compact('column', 'type', 'boolean', 'values', 'not');
